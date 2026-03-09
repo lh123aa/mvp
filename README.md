@@ -20,18 +20,14 @@
 ```
 demand-miner/
 ├── skill.yaml              # Skill 定义配置
-├── skill_entry.py          # Skill 标准接口
+├── skill_entry.py          # Skill 标准入口
+├── skill.py                # Skill 主要实现
 ├── README.md               # 项目文档
-├── interact.py             # 主交互入口
-├── modules/                # 核心模块
-│   ├── pre_alignment.py    # 前置对齐模块
-│   ├── stranger_mode.py    # 陌生模式（落地顾问）
-│   ├── basic_mode.py       # 基础模式（引导教练/落地顾问）
-│   └── senior_mode.py      # 资深模式（深度共创）
-├── utils/                  # 工具函数
-│   ├── state_manager.py    # 状态管理
-│   └── constraint_filter.py # 约束过滤
-├── data/                   # 数据存储
+├── modules/                # 核心模块（可选）
+│   └── ...
+├── utils/                  # 工具函数（可选）
+│   └── ...
+├── data/                   # 数据存储（可选）
 │   ├── sessions/           # 对话记录
 │   ├── reviews/            # 复盘小结
 │   └── stats/              # 统计报告
@@ -41,10 +37,9 @@ demand-miner/
 
 ### 使用方法
 
-1. 启动系统: `python interact.py`
-2. 系统将引导您完成4个前置对齐问题
-3. 根据您的认知层级匹配相应服务模式
-4. 获得贴合约束条件的商业闭环方案
+1. **作为独立程序运行**: `python interact.py`
+2. **作为Skill调用**: 通过`skill.py`中的`handle_request`函数
+3. **命令行调用**: `python skill_entry.py "项目分析"`
 
 ### 触发关键词
 
@@ -80,17 +75,13 @@ An intelligent demand mining system based on cognitive level adaptation, helping
 demand-miner/
 ├── skill.yaml              # Skill definition configuration
 ├── skill_entry.py          # Skill standard interface
+├── skill.py                # Main skill implementation
 ├── README.md               # Project documentation
-├── interact.py             # Main interaction entry point
-├── modules/                # Core modules
-│   ├── pre_alignment.py    # Pre-alignment module
-│   ├── stranger_mode.py    # Stranger mode (implementation advisor)
-│   ├── basic_mode.py       # Basic mode (guidance coach/implementation advisor)
-│   └── senior_mode.py      # Senior mode (deep collaboration)
-├── utils/                  # Utility functions
-│   ├── state_manager.py    # State management
-│   └── constraint_filter.py # Constraint filtering
-├── data/                   # Data storage
+├── modules/                # Core modules (optional)
+│   └── ...
+├── utils/                  # Utility functions (optional)
+│   └── ...
+├── data/                   # Data storage (optional)
 │   ├── sessions/           # Conversation records
 │   ├── reviews/            # Review summaries
 │   └── stats/              # Statistical reports
@@ -100,10 +91,9 @@ demand-miner/
 
 ### Usage
 
-1. Start system: `python interact.py`
-2. The system will guide you through 4 pre-alignment questions
-3. Match appropriate service mode based on your cognitive level
-4. Obtain a business loop solution that fits your constraints
+1. **Standalone Execution**: `python interact.py`
+2. **As a Skill**: Call `handle_request` function from `skill.py`
+3. **Command Line**: `python skill_entry.py "Project Analysis"`
 
 ### Trigger Keywords
 
@@ -118,7 +108,8 @@ demand-miner/
 
 ## Version History
 
-- v0.1.0 (2026-03-09): MVP Initial Release
+- v1.0.0 (2026-03-09): Refactored to standard skill structure
+- v0.1.0 (2026-03-08): MVP Initial Release
 
 ## Developers
 
