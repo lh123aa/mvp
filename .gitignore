@@ -16,6 +16,9 @@ data/reviews/*.md
 data/stats/*
 data/knowledge/*.py  # 如果这是临时数据
 
+# 工作数据文件 #
+docs/运营计划.md
+
 # IDE #
 .vscode/
 .idea/
