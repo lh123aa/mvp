@@ -81,8 +81,7 @@ demand-miner/
 │   └── stats/
 └── docs/                 # Documentation
     ├── 迭代日志.md       # Changelog
-    ├── 开发文档.md       # Development docs
-    └── 运营计划.md       # Operations plan
+    └── 开发文档.md       # Development docs
 ```
 
 ## Version
