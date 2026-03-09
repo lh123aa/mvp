@@ -57,6 +57,9 @@ Coverage of multiple industries:
 - Online Education
 - Private Domain E-commerce
 - Local Life Services
+- Health & Wellness
+- New Media Operations
+- Cross-border Services
 
 ## Project Structure
 

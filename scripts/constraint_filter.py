@@ -13,10 +13,12 @@ class UserConstraints:
     budget_constraint: str = ""      # 0成本/5000内/5000-20000/其他
     period_constraint: str = ""      # 1个月/3个月/6个月/其他
     core_target: str = ""      # 副业试水/创业立项/行业研究/职业转型
+    team_size_constraint: str = ""   # 1人/2-3人/5人以内/5人以上
     
     # 解析后的数值
     budget_limit: Optional[int] = None   # 数值(元)
     period_limit: Optional[int] = None    # 数值(月)
+    team_size_limit: Optional[int] = None  # 数值(人)
 
 
 class ConstraintFilter:
@@ -38,6 +40,14 @@ class ConstraintFilter:
         "6个月以上": 99
     }
     
+    # 团队人数映射
+    TEAM_SIZE_MAP = {
+        "1人": 1,
+        "2-3人": 3,
+        "5人以内": 5,
+        "5人以上": 99
+    }
+    
     def __init__(self, constraints: UserConstraints):
         self.constraints = constraints
         self._parse_constraints()
@@ -46,6 +56,7 @@ class ConstraintFilter:
         """解析约束为数值"""
         budget = self.constraints.budget_constraint
         period = self.constraints.period_constraint
+        team_size = self.constraints.team_size_constraint
         
         for key, value in self.BUDGET_MAP.items():
             if key in budget:
@@ -55,6 +66,11 @@ class ConstraintFilter:
         for key, value in self.PERIOD_MAP.items():
             if key in period:
                 self.constraints.period_limit = value
+                break
+        
+        for key, value in self.TEAM_SIZE_MAP.items():
+            if key in team_size:
+                self.constraints.team_size_limit = value
                 break
     
     def filter_options(self, options: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -121,6 +137,8 @@ class ConstraintFilter:
             parts.append(f"预算: {self.constraints.budget_constraint}")
         if self.constraints.period_constraint:
             parts.append(f"周期: {self.constraints.period_constraint}")
+        if self.constraints.team_size_constraint:
+            parts.append(f"团队: {self.constraints.team_size_constraint}")
         if self.constraints.core_target:
             parts.append(f"目标: {self.constraints.core_target}")
         return " | ".join(parts) if parts else "无明确约束"
@@ -132,7 +150,8 @@ def create_filter_from_session(session: Dict[str, Any]) -> ConstraintFilter:
     constraints = UserConstraints(
         budget_constraint=user_profile.get("预算约束", ""),
         period_constraint=user_profile.get("周期约束", ""),
-        core_target=user_profile.get("核心目标", "")
+        core_target=user_profile.get("核心目标", ""),
+        team_size_constraint=user_profile.get("团队人数", "")
     )
     return ConstraintFilter(constraints)
 
