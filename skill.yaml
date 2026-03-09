@@ -15,6 +15,7 @@ trigger_keywords:
   - 商业模式
   - 创业分析
   - 副业规划
+  - 复盘
 
 # 核心功能
 capabilities:
@@ -24,6 +25,7 @@ capabilities:
   - 解决方案匹配
   - 商业闭环设计
   - 验证指标制定
+  - 对话复盘迭代
 
 # 元信息
 metadata:
@@ -50,6 +52,7 @@ input:
     - 商业模式
     - 创业分析
     - 副业规划
+    - 复盘
 
 # 输出接口
 output:
