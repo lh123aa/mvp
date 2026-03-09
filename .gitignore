@@ -1,0 +1,55 @@
+# Python #
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+.Python
+.pytest_cache/
+.pyre/
+.pytype/
+
+# Data files that should not be committed #
+data/sessions/*.json
+data/reviews/*.json
+data/reviews/*.md
+data/stats/*
+data/knowledge/*.py  # 如果这是临时数据
+
+# IDE #
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS #
+.DS_Store
+Thumbs.db
+
+# Environment #
+venv/
+env/
+ENV/
+.venv/
+.env
+.env.local
+.env.backup
+
+# Logs #
+*.log
+logs/
+*.out
+
+# Distribution #
+*.egg-info/
+dist/
+build/
+*.egg
+*.tar.gz
+*.whl
+
+# Testing #
+.coverage
+htmlcov/
+.cov/
