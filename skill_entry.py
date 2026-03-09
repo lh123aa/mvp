@@ -19,7 +19,7 @@ class DemandMinerSkill:
         self.skill_name = "demand-miner"
         self.description = "陌生领域需求痛点挖掘与最小商业闭环落地全适配系统"
         self.trigger_keywords = [
-            "产品分析", "项目分析", "商业闭环", 
+            "产品分析", "项目分析", "商业分析", "商业闭环", 
             "需求挖掘", "商业模式", "创业分析", "副业规划"
         ]
     
@@ -59,7 +59,7 @@ class DemandMinerSkill:
         """
         query_lower = query.lower()
         return any(keyword in query_lower for keyword in [
-            "产品分析", "项目分析", "商业闭环", 
+            "产品分析", "项目分析", "商业分析", "商业闭环", 
             "需求挖掘", "商业模式", "创业分析", "副业规划"
         ])
     
