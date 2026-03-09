@@ -304,8 +304,14 @@ class DemandMiner:
 
 
 def main():
+    import sys
+    # 如果有命令行参数，将其作为用户输入
+    user_input = None
+    if len(sys.argv) > 1:
+        user_input = " ".join(sys.argv[1:])
+    
     dm = DemandMiner()
-    dm.start()
+    dm.start(user_input)
 
 
 if __name__ == "__main__":

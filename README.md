@@ -50,6 +50,7 @@ demand-miner/
 
 - 产品分析
 - 项目分析
+- 商业分析
 - 商业闭环
 - 需求挖掘
 - 商业模式
@@ -108,6 +109,7 @@ demand-miner/
 
 - Product Analysis
 - Project Analysis
+- Business Analysis
 - Business Loop
 - Demand Mining
 - Business Model

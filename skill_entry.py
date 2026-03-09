@@ -31,14 +31,9 @@ class DemandMinerSkill:
         :return: 执行结果
         """
         try:
-            # 启动DemandMiner
-            dm = DemandMiner()
-            
-            # 如果有上下文或用户输入，可能需要特殊处理
-            # 这里返回一个可以启动交互的标志
+            # 返回可启动交互的标志
             return {
                 "status": "success",
-                "message": "正在启动需求挖掘与最小商业闭环系统...",
                 "action": "start_interactive_session",
                 "skill_name": self.skill_name,
                 "user_input": user_input,
