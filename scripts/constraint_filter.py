@@ -194,7 +194,7 @@ def get_filtered_schemes(constraint_filter: ConstraintFilter, target_type: str =
     return constraint_filter.filter_options(schemes)
 
 
-# ========== 新增：生成阶段约束嵌入方法 ==========
+# ========== 生成阶段约束嵌入方法 ==========
 
 
 def get_constraint_params(constraint_filter: ConstraintFilter) -> Dict[str, Any]:
